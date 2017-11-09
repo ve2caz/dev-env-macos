@@ -24,7 +24,8 @@
 - Copy and paste the following command into Terminal's shell and hit ⏎
 
 ```bash
-xcode-select --install
+xcode-select --install \
+&& sudo xcodebuild -license accept
 ```
 
 ## Install bootstrap tooling
@@ -34,7 +35,8 @@ xcode-select --install
 - Copy and paste the following command into Terminal's shell and hit ⏎
 
 ```bash
-/usr/bin/curl -O https://raw.githubusercontent.com/ve2caz/dev-env-osx/master/scripts/bootstrap.sh \
+cd /tmp \
+&& /usr/bin/curl -O https://raw.githubusercontent.com/ve2caz/dev-env-osx/master/scripts/bootstrap.sh \
 && chmod +x ./bootstrap.sh \
 && ./bootstrap.sh
 ```
@@ -49,5 +51,6 @@ xcode-select --install
 ```bash
 mkdir -p ~/Documents/dev/github \
 && cd ~/Documents/dev/github \
-&& git clone git@github.com:ve2caz/dev-env-osx.git
+&& git clone git@github.com:ve2caz/dev-env-osx.git \
+&& cd dev-env-osx
 ```
