@@ -51,6 +51,6 @@ cd /tmp \
 ```bash
 mkdir -p ~/Documents/dev/github \
 && cd ~/Documents/dev/github \
-&& git clone git@github.com:ve2caz/dev-env-osx.git \
+&& git clone https://github.com/ve2caz/dev-env-osx.git \
 && cd dev-env-osx
 ```
