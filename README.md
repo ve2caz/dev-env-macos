@@ -2,6 +2,11 @@
 
 > Instructions and scripts allowing for the management of development environments on OSX
 
+## Before you begin
+
+- Installing, updating or removing software is an administrative task and as such should be performed using an account with elevated privileges i.e. a member of the admin group
+- Development is NOT an administrative task and as such should be performed using and account with lowered privileges i.e. a member of the staff group
+
 ## Install XCode
 
 > *[Xcode is an integrated development environment (IDE) for macOS containing a suite of software development tools developed by Apple for developing software for macOS, iOS, watchOS, and tvOS.](https://en.wikipedia.org/wiki/Xcode)*
