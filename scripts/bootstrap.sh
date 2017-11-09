@@ -1,2 +1,10 @@
 #/bin/bash
-echo "Do something"
+
+echo "Installing Homebrew: https://brew.sh"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Installing Homebrew Cask: https://caskroom.github.io"
+brew tap caskroom/cask
+
+echo "Brew install git: https://git-scm.com/downloads"
+brew install git
