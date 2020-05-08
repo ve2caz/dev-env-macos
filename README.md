@@ -15,6 +15,8 @@
 - Search for XCode in the search box
 - Install XCode
 - Go for coffee...
+- Launch XCode and accept the license agreement
+- Quit XCode
 
 ## Install XCode command line tools
 
@@ -24,8 +26,16 @@
 - Copy and paste the following command into Terminal's shell and hit ⏎
 
 ```bash
-xcode-select --install \
-&& sudo xcodebuild -license accept
+$ xcode-select --install \
+&& xcode-select -p
+/Applications/Xcode.app/Contents/Developer
+```
+
+- If the path shown is the same as above you can skip the next step
+- Copy and paste the following command into Terminal's shell and hit ⏎
+
+```bash
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
 ## Install bootstrap tooling
