@@ -6,6 +6,8 @@
 
 - Installing, updating or removing software is an administrative task and as such should be performed using an account with elevated privileges i.e. a member of the admin group
 - Development is NOT an administrative task and as such should be performed using and account with lowered privileges i.e. a member of the staff group
+- Unless otherwise specified all terminal commands are based on the new default zsh shell.
+- Apple macOS Catalina 10.15.4
 
 ## Install XCode
 
@@ -25,30 +27,33 @@
 - ⌘ Space + *Terminal* + ⏎
 - Copy and paste the following command into Terminal's shell and hit ⏎
 
-```bash
-$ xcode-select --install \
+```zsh
+% xcode-select --install \
 && xcode-select -p
 /Applications/Xcode.app/Contents/Developer
 ```
 
-- If the path shown is the same as above you can skip the next step
-- Copy and paste the following command into Terminal's shell and hit ⏎
+- If the developer directory is the same as above you can skip the next step
+- Copy and paste the following command into Terminal's shell (don't forget to change `admin_account`) and hit ⏎
 
-```bash
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+```zsh
+% sudo - admin_account
+% sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
 ## Install bootstrap tooling
 
 - ⌘ Space + *Terminal* + ⏎
 - In Terminal's shell type ```cd /tmp```
-- Copy and paste the following command into Terminal's shell and hit ⏎
+- Copy and paste the following command into Terminal's shell (don't forget to change `admin_account`) and hit ⏎
 
-```bash
-cd /tmp \
-&& /usr/bin/curl -O https://raw.githubusercontent.com/ve2caz/dev-env-osx/master/scripts/bootstrap.sh \
-&& chmod +x ./bootstrap.sh \
-&& ./bootstrap.sh
+```zsh
+% su - admin_account
+% cd /tmp \
+  && /usr/bin/curl -O https://raw.githubusercontent.com/ve2caz/dev-env-osx/master/scripts/bootstrap.sh \
+  && chmod +x ./bootstrap.sh \
+% ./bootstrap.sh
+% exit
 ```
 
 ## Install this repository locally
