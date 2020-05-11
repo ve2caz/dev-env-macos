@@ -38,19 +38,19 @@
 ```zsh
 % sudo - admin_account
 % sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+% exit
 ```
 
 ## Install bootstrap tooling
 
 - ⌘ Space + *Terminal* + ⏎
-- In Terminal's shell type ```cd /tmp```
-- Copy and paste the following command into Terminal's shell (don't forget to change `admin_account`) and hit ⏎
+- Execute the following commands in Terminal's shell (don't forget to change `admin_account`)
 
 ```zsh
 % su - admin_account
-% cd /tmp \
-  && /usr/bin/curl -O https://raw.githubusercontent.com/ve2caz/dev-env-osx/master/scripts/bootstrap.sh \
-  && chmod +x ./bootstrap.sh \
+% cd /tmp
+% /usr/bin/curl -O https://raw.githubusercontent.com/ve2caz/dev-env-osx/master/scripts/bootstrap.sh
+% chmod +x ./bootstrap.sh
 % ./bootstrap.sh
 % exit
 ```
@@ -63,9 +63,9 @@
 - In Terminal's shell execute the following commands
 
 ```bash
-export GITHUB_ROOT=~/Documents/dev/github \
-&& mkdir -p ${GITHUB_ROOT} \
-&& cd ${GITHUB_ROOT} \
-&& git clone https://github.com/ve2caz/dev-env-osx.git \
-&& cd dev-env-osx
+% export GITHUB_ROOT=~/Documents/dev/github
+% mkdir -p ${GITHUB_ROOT}
+% cd ${GITHUB_ROOT}
+% git clone https://github.com/ve2caz/dev-env-osx.git
+% cd dev-env-osx
 ```
