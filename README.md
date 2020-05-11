@@ -25,16 +25,15 @@
 > XCode doesn't install it's command line unilities by default
 
 - ⌘ Space + *Terminal* + ⏎
-- Copy and paste the following command into Terminal's shell and hit ⏎
+- Execute the following commands in Terminal's shell
 
 ```zsh
-% xcode-select --install \
-&& xcode-select -p
-/Applications/Xcode.app/Contents/Developer
+% xcode-select --install
+% xcode-select -p
 ```
 
-- If the developer directory is the same as above you can skip the next step
-- Copy and paste the following command into Terminal's shell (don't forget to change `admin_account`) and hit ⏎
+- If the developer directory is `/Applications/Xcode.app/Contents/Developer` you can skip the next steps
+- Execute the following commands in Terminal's shell (don't forget to change `admin_account`)
 
 ```zsh
 % sudo - admin_account
