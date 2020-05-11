@@ -4,7 +4,7 @@ echo "Installing Homebrew: https://brew.sh"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # echo "Installing Homebrew Cask: https://caskroom.github.io"
-# brew tap caskroom/cask
+# brew tap caskroom/cask-cask
 
 # echo "Brew install cask/completion"
 # brew install brew-cask-completion
