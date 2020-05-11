@@ -12,5 +12,5 @@ brew install bash-completion
 echo "Brew install cask/completion"
 brew install brew-cask-completion
 
-echo "Brew install git: https://git-scm.com/downloads"
-brew install git
+# echo "Brew install git: https://git-scm.com/downloads"
+# brew install git
