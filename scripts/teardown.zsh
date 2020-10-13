@@ -3,6 +3,10 @@
 # Emulate BASH to make scripting easier
 emulate -LR bash
 
-# Remove local Homebrew i.e. does not require an administrative account
-HOMEBREW_DIR=~/homebrew
-rm -rf $HOMEBREW_DIR
+# Oh My Zsh
+OHMYZSH_ROOT=~/.oh-my-zsh
+rm -rf $OHMYZSH_ROOT
+
+# Homebrew
+HOMEBREW_ROOT=~/homebrew
+rm -rf $HOMEBREW_ROOT
