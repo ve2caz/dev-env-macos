@@ -12,3 +12,6 @@ rm -rf $ZSHRC $ZSHRC_BACKUP $OHMYZSH_ROOT
 # Homebrew
 HOMEBREW_ROOT=~/homebrew
 rm -rf $HOMEBREW_ROOT
+
+# Self
+echo "Please remove the dev-env-macos repo"

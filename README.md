@@ -2,6 +2,36 @@
 
 > Instructions and scripts allowing for the management of development environments on MacOS
 
+## Summary
+
+- Setup [homebrew](https://docs.brew.sh/Installation) locally to remove the need for sudo use
+- Install brew formulae
+  - [gnupg](https://gnupg.org)
+- Install brew cask tap
+  - [iterm2](https://www.iterm2.com)
+- TBD: Install ITerm2 Fonts/Colors
+- Install [Oh-My-Zsh](https://ohmyz.sh)
+- Install Oh-My-Zsh Custom Plugins/Themes
+  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- Set .zshrc preferences
+  - [ZSH_THEME](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)="robbyrussell"
+  - [HIST_STAMPS](https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps)="yyyy-mm-dd"
+  - [plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
+    - zsh-syntax-highlighting
+    - zsh-autosuggestions
+    - asdf
+    - [zsh-brew-local](https://github.com/ve2caz/dev-env-macos/.oh-my-zsh/custom/plugins/zsh-brew-local)
+    - brew
+    - git
+    - history
+    - TBD: node
+- Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
+- Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
+- Install ASDF runtime
+  - TBD: Go
+  - TBD: Node.js
+
 ## Before you begin
 
 - Installing, updating or removing software is an administrative task and as such should be performed using an account with elevated privileges i.e. a member of the admin group
@@ -50,8 +80,8 @@
 
 ```zsh
 % export GITHUB_ROOT=~/Documents/dev/github
-% mkdir -p ${GITHUB_ROOT}
-% cd ${GITHUB_ROOT}
+% mkdir -p $GITHUB_ROOT
+% cd $GITHUB_ROOT
 % git clone https://github.com/ve2caz/dev-env-macos.git
 % cd dev-env-macos
 ```
@@ -62,7 +92,7 @@
 % ./scripts/setup.zsh
 ```
 
-## Uninstall the development environment
+## Teardown the development environment
 
 ```zsh
 % ./scripts/teardown.zsh
