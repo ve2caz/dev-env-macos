@@ -109,6 +109,7 @@ function caskInstallIfNot() {
 
 function installBrewFormulas() {
     message "installing brew formulas..." && blankLine
+    brewInstallIfNot coreutils && blankLine # https://formulae.brew.sh/formula/coreutils
     brewInstallIfNot gnupg && blankLine # https://gnupg.org
 }
 
@@ -154,10 +155,10 @@ function installOhMyZshCustomPlugin() {
 function installOhMyZshBrewLocalPlugin() {
     OHMYZSH_BREW_LOCAL=$OHMYZSH_CUSTOM_PLUGINS/zsh-brew-local
     if [ ! -d ${OHMYZSH_BREW_LOCAL} ];then
-        echo "installing zsh-brew-local"
+        message "installing zsh-brew-local"
         cp -fpR $SCRIPT_PATH/../.oh-my-zsh/custom/plugins/zsh-brew-local $OHMYZSH_BREW_LOCAL
     else
-        echo "zsh-brew-local is already installed"
+        message "zsh-brew-local is already installed"
     fi
 }
 
@@ -180,7 +181,7 @@ function installAsdf() {
         git checkout "$(git describe --abbrev=0 --tags)"
         popd
     else
-        echo "asdf is already installed"
+        message "asdf is already installed"
     fi
     message "adding asdf to the path"
     . $ASDF_ROOT/asdf.sh

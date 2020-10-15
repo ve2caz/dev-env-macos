@@ -6,6 +6,7 @@
 
 - Setup [homebrew](https://docs.brew.sh/Installation) locally to remove the need for sudo use
 - Install brew formulae
+  - [coreutils](https://formulae.brew.sh/formula/coreutils)
   - [gnupg](https://gnupg.org)
 - Install brew cask tap
   - [iterm2](https://www.iterm2.com)
