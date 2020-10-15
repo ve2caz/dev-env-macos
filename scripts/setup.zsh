@@ -116,6 +116,7 @@ function installBrewFormulas() {
 function installBrewCasks() {
     message "installing brew casks..."
     caskInstallIfNot iterm2 # https://www.iterm2.com
+    caskInstallIfNot visual-studio-code # https://code.visualstudio.com
 }
 
 function deployBrew() {

@@ -10,10 +10,11 @@
   - [gnupg](https://gnupg.org)
 - Install brew casks
   - [iterm2](https://www.iterm2.com)
+  - [Visual Studio Code](https://code.visualstudio.com)
 - TBD: Install ITerm2 Fonts/Colors
+- TBD: Install VSCode Plgins
 - Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
 - Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
-- Install ASDF runtime
   - GoLang
   - Node.js
 - Install [Oh-My-Zsh](https://ohmyz.sh)
