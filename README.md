@@ -4,13 +4,18 @@
 
 ## Summary
 
-- Setup [homebrew](https://docs.brew.sh/Installation) locally to remove the need for sudo use
-- Install brew formulae
+- Install [homebrew](https://docs.brew.sh/Installation) locally to remove the need for sudo use
+- Install brew formulas
   - [coreutils](https://formulae.brew.sh/formula/coreutils)
   - [gnupg](https://gnupg.org)
-- Install brew cask tap
+- Install brew casks
   - [iterm2](https://www.iterm2.com)
 - TBD: Install ITerm2 Fonts/Colors
+- Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
+- Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
+- Install ASDF runtime
+  - GoLang
+  - Node.js
 - Install [Oh-My-Zsh](https://ohmyz.sh)
 - Install Oh-My-Zsh Custom Plugins/Themes
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -21,17 +26,17 @@
   - [plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
     - zsh-syntax-highlighting
     - zsh-autosuggestions
-    - asdf
     - [zsh-brew-local](https://github.com/ve2caz/dev-env-macos/.oh-my-zsh/custom/plugins/zsh-brew-local)
     - brew
+    - asdf
+    - docker
     - git
+    - golang
     - history
-    - TBD: node
-- Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
-- Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
-- Install ASDF runtime
-  - TBD: Go
-  - TBD: Node.js
+    - kubectl
+    - node
+    - npm
+    - vscode
 
 ## Before you begin
 

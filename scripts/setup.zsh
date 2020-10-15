@@ -93,29 +93,29 @@ function installHomebrewLocally() {
 
 function brewInstallIfNot() {
     message "install $1 if not present"
+    blankLine
     brew list $1 &>/dev/null || brew install $1
 }
 
 function caskInstallIfNot() {
     message "install $1 if not present"
+    blankLine
     if isCurrentUserAdmn; then
-        blankLine
         brew list --cask $1 &>/dev/null || brew cask install $1
     else
-        blankLine
         brew list --cask $1 &>/dev/null || brew cask install $1 --appdir=~/Applications
     fi
 }
 
 function installBrewFormulas() {
-    message "installing brew formulas..." && blankLine
-    brewInstallIfNot coreutils && blankLine # https://formulae.brew.sh/formula/coreutils
-    brewInstallIfNot gnupg && blankLine # https://gnupg.org
+    message "installing brew formulas..."
+    brewInstallIfNot coreutils # https://formulae.brew.sh/formula/coreutils
+    brewInstallIfNot gnupg # https://gnupg.org
 }
 
 function installBrewCasks() {
-    message "installing brew casks..." && blankLine
-    caskInstallIfNot iterm2 && blankLine # https://www.iterm2.com
+    message "installing brew casks..."
+    caskInstallIfNot iterm2 # https://www.iterm2.com
 }
 
 function deployBrew() {
@@ -126,6 +126,47 @@ function deployBrew() {
     brew update
     installBrewFormulas
     installBrewCasks
+}
+
+
+##################################################################
+# ASDF - Manage multiple runtime versions with a single CLI tool #
+##################################################################
+function installAsdf() {
+    if [ ! -d $ASDF_ROOT ]; then
+        message "installing asdf"
+        git clone https://github.com/asdf-vm/asdf.git $ASDF_ROOT
+        pushd $ASDF_ROOT
+        git checkout "$(git describe --abbrev=0 --tags)"
+        popd
+    else
+        message "asdf is already installed"
+    fi
+    message "adding asdf to the path"
+    blankLine
+    . $ASDF_ROOT/asdf.sh
+    asdf update
+}
+
+
+function installAsdfPlugin() {
+    message "install $1 if not present"
+    blankLine
+    asdf plugin list $1 | grep $1 &>/dev/null || asdf plugin add $1
+}
+
+function installNodeJsAsdfPluginCerts() {
+    message "installing asdf nodejs plugin GPG certs"
+    blankLine
+    $HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
+}
+
+
+function deployAsdf() {
+    installAsdf
+    installAsdfPlugin golang
+    installAsdfPlugin nodejs
+    installNodeJsAsdfPluginCerts
 }
 
 
@@ -148,7 +189,7 @@ function installOhMyZshCustomPlugin() {
         message "installing $1"
         git clone $ZSH_USERS/zsh-syntax-highlighting ${ZSH_CUSTOM_PLUGIN}
     else
-        message "$1 is already installed"
+        message "skiping $1 installed"
     fi
 }
 
@@ -158,7 +199,7 @@ function installOhMyZshBrewLocalPlugin() {
         message "installing zsh-brew-local"
         cp -fpR $SCRIPT_PATH/../.oh-my-zsh/custom/plugins/zsh-brew-local $OHMYZSH_BREW_LOCAL
     else
-        message "zsh-brew-local is already installed"
+        message "skiping zsh-brew-local installed"
     fi
 }
 
@@ -167,37 +208,6 @@ function deployOhMyZsh() {
     installOhMyZshCustomPlugin zsh-syntax-highlighting
     installOhMyZshCustomPlugin zsh-autosuggestions
     installOhMyZshBrewLocalPlugin
-}
-
-
-##################################################################
-# ASDF - Manage multiple runtime versions with a single CLI tool #
-##################################################################
-function installAsdf() {
-    if [ ! -d $ASDF_ROOT ]; then
-        message "installing asdf"
-        git clone https://github.com/asdf-vm/asdf.git $ASDF_ROOT
-        pushd $ASDF_ROOT
-        git checkout "$(git describe --abbrev=0 --tags)"
-        popd
-    else
-        message "asdf is already installed"
-    fi
-    message "adding asdf to the path"
-    . $ASDF_ROOT/asdf.sh
-    asdf update
-}
-
-
-function installAsdfPlugin() {
-    message "install $1 if not present"
-    # asdf plugin add $1
-}
-
-
-function deployAsdf() {
-    installAsdf
-    installAsdfPlugin nodejs
 }
 
 
@@ -210,12 +220,12 @@ function setZshrcPreferences() {
     #     -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/' \
     #     -e 's/# HIST_STAMPS=/HIST_STAMPS=/' \
     #     -e 's/HIST_STAMPS=\"mm\/dd\/yyyy\"/HIST_STAMPS=\"yyyy-mm-dd\"/' \
-    #     -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions asdf zsh-brew-local brew git history node/' \
+    #     -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions zsh-brew-local brew asdf docker git golang history kubectl node npm vscode/' \
     #     $ZSHRC_BACKUP > $ZSHRC
     sed \
         -e 's/# HIST_STAMPS=/HIST_STAMPS=/' \
         -e 's/HIST_STAMPS=\"mm\/dd\/yyyy\"/HIST_STAMPS=\"yyyy-mm-dd\"/' \
-        -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions asdf zsh-brew-local brew git history/' \
+        -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions zsh-brew-local brew asdf docker git golang history kubectl node npm vscode/' \
         $ZSHRC_BACKUP > $ZSHRC
 }
 
@@ -224,6 +234,6 @@ function setZshrcPreferences() {
 # MAIN #
 ########
 deployBrew
-deployOhMyZsh
 deployAsdf
+deployOhMyZsh
 setZshrcPreferences
