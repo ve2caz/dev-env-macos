@@ -125,6 +125,12 @@ function deployBrew() {
     brew doctor
     message "brew update" && blankLine
     brew update
+    message "brew upgrade" && blankLine
+    brew upgrade
+    message "brew upgrade --cask" && blankLine
+    brew upgrade --cask
+    message "brew cleanup" && blankLine
+    brew cleanup
     installBrewFormulas
     installBrewCasks
 }
