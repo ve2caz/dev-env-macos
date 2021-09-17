@@ -16,7 +16,10 @@
 - Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
 - Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
   - GoLang
-  - Node.js
+  - Java
+  - Kotlin
+  - NodeJS
+  - Python
 - Install [Oh-My-Zsh](https://ohmyz.sh)
 - Install Oh-My-Zsh Custom Plugins/Themes
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -33,8 +36,10 @@
     - docker
     - git
     - golang
+    - gradle
     - history
     - kubectl
+    - kubectx
     - node
     - npm
     - vscode

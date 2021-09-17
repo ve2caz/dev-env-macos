@@ -231,7 +231,7 @@ function setZshrcPreferences() {
     sed \
         -e 's/# HIST_STAMPS=/HIST_STAMPS=/' \
         -e 's/HIST_STAMPS=\"mm\/dd\/yyyy\"/HIST_STAMPS=\"yyyy-mm-dd\"/' \
-        -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions zsh-brew-local brew asdf docker git golang history kubectl node npm vscode/' \
+        -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions zsh-brew-local brew asdf docker git golang gradle history iterm2 kubectl kubectx node npm vscode/' \
         $ZSHRC_BACKUP > $ZSHRC
 }
 
