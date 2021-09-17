@@ -169,6 +169,7 @@ function deployAsdf() {
     installAsdfPlugin java
     installAsdfPlugin kotlin
     installAsdfPlugin nodejs
+    installAsdfPlugin python
     installNodeJsAsdfPluginCerts
 }
 
