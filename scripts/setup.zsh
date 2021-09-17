@@ -151,7 +151,7 @@ function installAsdf() {
 
 
 function installAsdfPlugin() {
-    message "install $1 if not present"
+    message "install $1 asdf plugin if not present"
     blankLine
     asdf plugin list $1 | grep $1 &>/dev/null || asdf plugin add $1
 }
@@ -166,6 +166,7 @@ function installNodeJsAsdfPluginCerts() {
 function deployAsdf() {
     installAsdf
     installAsdfPlugin golang
+    installAsdfPlugin java
     installAsdfPlugin nodejs
     installNodeJsAsdfPluginCerts
 }
