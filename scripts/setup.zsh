@@ -101,9 +101,9 @@ function caskInstallIfNot() {
     message "install $1 if not present"
     blankLine
     if isCurrentUserAdmn; then
-        brew list --cask $1 &>/dev/null || brew cask install $1
+        brew list --cask $1 &>/dev/null || brew install --cask $1
     else
-        brew list --cask $1 &>/dev/null || brew cask install $1 --appdir=~/Applications
+        brew list --cask $1 &>/dev/null || brew install --cask $1 --appdir=~/Applications
     fi
 }
 
