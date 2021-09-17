@@ -167,6 +167,7 @@ function deployAsdf() {
     installAsdf
     installAsdfPlugin golang
     installAsdfPlugin java
+    installAsdfPlugin kotlin
     installAsdfPlugin nodejs
     installNodeJsAsdfPluginCerts
 }
