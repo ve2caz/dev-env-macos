@@ -9,6 +9,8 @@
   - [coreutils](https://formulae.brew.sh/formula/coreutils)
   - [gnupg](https://gnupg.org)
 - Install brew casks
+  - [Altair GraphQL Client](https://altair.sirmuel.design)
+  - [GraphQL Playground](https://github.com/graphql/graphql-playground)
   - [iterm2](https://www.iterm2.com)
   - [Visual Studio Code](https://code.visualstudio.com)
 - TBD: Install ITerm2 Fonts/Colors

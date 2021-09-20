@@ -115,6 +115,8 @@ function installBrewFormulas() {
 
 function installBrewCasks() {
     message "installing brew casks..."
+    caskInstallIfNot altair-graphql-client # https://altair.sirmuel.design
+    caskInstallIfNot graphql-playground # https://github.com/graphql/graphql-playground
     caskInstallIfNot iterm2 # https://www.iterm2.com
     caskInstallIfNot visual-studio-code # https://code.visualstudio.com
 }
