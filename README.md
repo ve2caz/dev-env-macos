@@ -10,6 +10,7 @@
   - [gnupg](https://gnupg.org)
 - Install brew casks
   - [Altair GraphQL Client](https://altair.sirmuel.design)
+  - [GitHub Desktop](https://docs.github.com/en/desktop)
   - [GraphQL Playground](https://github.com/graphql/graphql-playground)
   - [iterm2](https://www.iterm2.com)
   - [Visual Studio Code](https://code.visualstudio.com)
