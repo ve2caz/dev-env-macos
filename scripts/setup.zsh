@@ -202,7 +202,7 @@ function installOhMyZshCustomPlugin() {
     OHMYZSH_CUSTOM_PLUGIN=$OHMYZSH_CUSTOM_PLUGINS/$1
     if [ ! -d ${OHMYZSH_CUSTOM_PLUGIN} ];then
         message "installing $1"
-        git clone $ZSH_USERS/zsh-syntax-highlighting ${ZSH_CUSTOM_PLUGIN}
+        git clone $ZSH_USERS/zsh-syntax-highlighting $OHMYZSH_CUSTOM_PLUGIN
     else
         message "skiping $1 installed"
     fi
