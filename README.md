@@ -21,6 +21,7 @@
 - Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
   - GoLang
   - Java
+  - JQ
   - Kotlin
   - NodeJS
   - Python
@@ -53,7 +54,7 @@
 - Installing, updating or removing software is an administrative task and as such should be performed using an account with elevated privileges i.e. a member of the admin group
 - Development is NOT an administrative task and as such should be performed using and account with lowered privileges i.e. a member of the staff group
 - Unless otherwise specified all terminal commands are based on the new default zsh shell.
-- Apple macOS Catalina 10.15.7
+- Apple macOS Big Sur 11.16.1
 
 ## Install XCode
 
@@ -85,6 +86,22 @@
 % sudo - <admin account>
 % sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 % exit
+```
+
+> Update XCode command line tools
+
+```zsh
+Error: Your Command Line Tools are too outdated.
+Update them from Software Update in System Preferences or run:
+  softwareupdate --all --install --force
+
+If that doesn't show you any updates, run:
+  sudo rm -rf /Library/Developer/CommandLineTools
+  sudo xcode-select --install
+
+Alternatively, manually download them from:
+  https://developer.apple.com/download/all/.
+  You should download the Command Line Tools for Xcode XX.X.
 ```
 
 ## Install this repository locally
