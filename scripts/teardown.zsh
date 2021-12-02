@@ -8,6 +8,9 @@ ASDF=~/.asdf
 rm -rf $ASDF
 
 # Homebrew Cask
+brew cask uninstall altair-graphql-client
+brew cask uninstall github
+brew cask uninstall graphql-playground
 brew cask uninstall iterm2
 brew cask uninstall visual-studio-code
 
