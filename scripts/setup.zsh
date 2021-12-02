@@ -118,6 +118,7 @@ function installBrewCasks() {
     caskInstallIfNot altair-graphql-client # https://altair.sirmuel.design
     caskInstallIfNot github # https://docs.github.com/en/desktop
     caskInstallIfNot graphql-playground # https://github.com/graphql/graphql-playground
+    caskInstallIfNot intellij-idea-ce # https://www.jetbrains.com/idea
     caskInstallIfNot iterm2 # https://www.iterm2.com
     caskInstallIfNot visual-studio-code # https://code.visualstudio.com
 }

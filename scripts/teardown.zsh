@@ -11,6 +11,7 @@ rm -rf $ASDF
 brew cask uninstall altair-graphql-client
 brew cask uninstall github
 brew cask uninstall graphql-playground
+brew cask uninstall intellij-idea-ce
 brew cask uninstall iterm2
 brew cask uninstall visual-studio-code
 

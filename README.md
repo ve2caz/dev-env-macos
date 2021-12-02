@@ -12,6 +12,7 @@
   - [Altair GraphQL Client](https://altair.sirmuel.design)
   - [GitHub Desktop](https://docs.github.com/en/desktop)
   - [GraphQL Playground](https://github.com/graphql/graphql-playground)
+  - [IntelliJ Community Edition](https://www.jetbrains.com/idea)
   - [iterm2](https://www.iterm2.com)
   - [Visual Studio Code](https://code.visualstudio.com)
 - TBD: Install ITerm2 Fonts/Colors
