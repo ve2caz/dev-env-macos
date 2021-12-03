@@ -7,6 +7,7 @@ emulate -LR bash
 # GLOBAL DEFINITIONS #
 ######################
 ASDF_ROOT=~/.asdf
+HOMEBREW_INTEL_ROOT=/usr/local/Homebrew
 HOMEBREW_LOCAL_ROOT=~/homebrew
 OHMYZSH_ROOT=~/.oh-my-zsh
 OHMYZSH_CUSTOM_ROOT=$OHMYZSH_ROOT/custom
@@ -32,7 +33,7 @@ function message() {
     echo "$STAMP --- $SCRIPT >>> $1"
 }
 
-function isCurrentUserAdmn() {
+function isCurrentUserAdmin() {
     WHOAMI=`whoami`
     if groups $WHOAMI | grep -q -w admin; then
         message "$WHOAMI is administrator"
@@ -53,6 +54,26 @@ function isBrewCommandFound() {
     fi
     message "brew command not found"
     return 1
+}
+
+function isHomebrewInstalledNormally() {
+    if [ -d ${HOMEBREW_INTEL_ROOT} ]; then
+        message "homebrew is installed"
+        return 0
+    fi
+    message "homebrew is not installed"
+    return 1
+}
+
+function installHomebrewNormally() {
+    if ! isBrewCommandFound; then
+        if ! isHomebrewInstalledNormally; then
+            message "installing homebrew"
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        else
+            message "skiping homebrew install"
+        fi
+    fi
 }
 
 function isHomebrewInstalledLocally() {
@@ -91,6 +112,14 @@ function installHomebrewLocally() {
     fi
 }
 
+function installHomebrew() {
+    if isCurrentUserAdmin; then
+        installHomebrewNormally
+    else
+        installHomebrewLocally
+    fi
+}
+
 function brewInstallIfNot() {
     message "install $1 if not present"
     blankLine
@@ -100,7 +129,7 @@ function brewInstallIfNot() {
 function caskInstallIfNot() {
     message "install $1 if not present"
     blankLine
-    if isCurrentUserAdmn; then
+    if isCurrentUserAdmin; then
         brew list --cask $1 &>/dev/null || brew install --cask $1
     else
         brew list --cask $1 &>/dev/null || brew install --cask $1 --appdir=~/Applications
@@ -124,7 +153,7 @@ function installBrewCasks() {
 }
 
 function deployBrew() {
-    installHomebrewLocally
+    installHomebrew
     message "brew doctor" && blankLine
     brew doctor
     message "brew update" && blankLine
