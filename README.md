@@ -4,7 +4,9 @@
 
 ## Summary
 
-- Install [homebrew](https://docs.brew.sh/Installation) locally to remove the need for sudo use
+- Install [homebrew](https://docs.brew.sh/Installation)
+  - If the user has administration capabilities install to the expected location
+  - Otherwise install locally to remove the need for sudo use
 - Install brew formulas
   - [coreutils](https://formulae.brew.sh/formula/coreutils)
   - [gnupg](https://gnupg.org)
@@ -16,7 +18,6 @@
   - [iterm2](https://www.iterm2.com)
   - [Visual Studio Code](https://code.visualstudio.com)
 - TBD: Install ITerm2 Fonts/Colors
-- TBD: Install VSCode Plgins
 - Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
 - Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
   - GoLang
