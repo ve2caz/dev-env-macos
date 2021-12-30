@@ -145,6 +145,7 @@ function installBrewFormulas() {
 function installBrewCasks() {
     message "installing brew casks..."
     caskInstallIfNot altair-graphql-client # https://altair.sirmuel.design
+    caskInstallIfNot drawio # https://www.diagrams.net
     caskInstallIfNot github # https://docs.github.com/en/desktop
     caskInstallIfNot graphql-playground # https://github.com/graphql/graphql-playground
     caskInstallIfNot intellij-idea-ce # https://www.jetbrains.com/idea

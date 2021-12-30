@@ -12,6 +12,7 @@
   - [gnupg](https://gnupg.org)
 - Install brew casks
   - [Altair GraphQL Client](https://altair.sirmuel.design)
+  - [Draw.io](https://www.diagrams.net)
   - [GitHub Desktop](https://docs.github.com/en/desktop)
   - [GraphQL Playground](https://github.com/graphql/graphql-playground)
   - [IntelliJ Community Edition](https://www.jetbrains.com/idea)
