@@ -207,6 +207,7 @@ function installNodeJsAsdfPluginCerts() {
 
 function deployAsdf() {
     installAsdf
+    installAsdfPlugin gradle
     installAsdfPlugin golang
     installAsdfPlugin java
     installAsdfPlugin jq

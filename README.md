@@ -23,6 +23,7 @@
 - TBD: Install ITerm2 Fonts/Colors
 - Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
 - Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
+  - Gradle
   - GoLang
   - Java
   - JQ
