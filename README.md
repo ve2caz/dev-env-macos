@@ -2,59 +2,6 @@
 
 > Instructions and scripts allowing for the management of development environments on MacOS
 
-## Summary
-
-- Install [homebrew](https://docs.brew.sh/Installation)
-  - If the user has administration capabilities install to the expected location
-  - Otherwise install locally to remove the need for sudo use
-- Install brew formulas
-  - [coreutils](https://formulae.brew.sh/formula/coreutils)
-  - [gnupg](https://gnupg.org)
-- Install brew casks
-  - [Altair GraphQL Client](https://altair.sirmuel.design)
-  - [Draw.io](https://www.diagrams.net)
-  - [GitHub Desktop](https://docs.github.com/en/desktop)
-  - [GraphQL Playground](https://github.com/graphql/graphql-playground)
-  - [Inkscape](https://inkscape.org)
-  - [IntelliJ Community Edition](https://www.jetbrains.com/idea)
-  - [iterm2](https://www.iterm2.com)
-  - [macSVG](https://macsvg.org)
-  - [Visual Studio Code](https://code.visualstudio.com)
-- TBD: Install ITerm2 Fonts/Colors
-- Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
-- Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
-  - Gradle
-  - GoLang
-  - Java
-  - JQ
-  - Kotlin
-  - Maven
-  - NodeJS
-  - Python
-- Install [Oh-My-Zsh](https://ohmyz.sh)
-- Install Oh-My-Zsh Custom Plugins/Themes
-  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- Set .zshrc preferences
-  - [ZSH_THEME](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)="robbyrussell"
-  - [HIST_STAMPS](https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps)="yyyy-mm-dd"
-  - [plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
-    - zsh-syntax-highlighting
-    - zsh-autosuggestions
-    - [zsh-brew-local](https://github.com/ve2caz/dev-env-macos/.oh-my-zsh/custom/plugins/zsh-brew-local)
-    - brew
-    - asdf
-    - docker
-    - git
-    - golang
-    - gradle
-    - history
-    - kubectl
-    - kubectx
-    - node
-    - npm
-    - vscode
-
 ## Before you begin
 
 - Installing, updating or removing software is an administrative task and as such should be performed using an account with elevated privileges i.e. a member of the admin group
@@ -136,3 +83,61 @@ Alternatively, manually download them from:
 ```zsh
 % ./scripts/teardown.zsh
 ```
+
+## Tooling Inventory
+
+- Install [homebrew](https://docs.brew.sh/Installation)
+  - If the user has administration capabilities install to the expected location
+  - Otherwise install locally to remove the need for sudo use
+- Install brew formulas
+  - [coreutils](https://formulae.brew.sh/formula/coreutils)
+  - [gnupg](https://gnupg.org)
+- Install brew casks
+  - [Altair GraphQL Client](https://altair.sirmuel.design)
+  - [Draw.io](https://www.diagrams.net)
+  - [GitHub Desktop](https://docs.github.com/en/desktop)
+  - [GraphQL Playground](https://github.com/graphql/graphql-playground)
+  - [Inkscape](https://inkscape.org)
+  - [IntelliJ Community Edition](https://www.jetbrains.com/idea)
+  - [iterm2](https://www.iterm2.com)
+  - [macSVG](https://macsvg.org)
+  - [Visual Studio Code](https://code.visualstudio.com)
+- Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool
+- Install [ASDF runtime plugins](https://github.com/asdf-vm/asdf-plugins)
+  - Gradle
+  - GoLang
+  - Java
+  - JQ
+  - Kotlin
+  - Maven
+  - NodeJS
+  - Python
+- Install [Oh-My-Zsh](https://ohmyz.sh)
+- Install Oh-My-Zsh Custom Plugins/Themes
+  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- Set .zshrc preferences
+  - [ZSH_THEME](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)="robbyrussell"
+  - [HIST_STAMPS](https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps)="yyyy-mm-dd"
+  - [plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
+    - zsh-syntax-highlighting
+    - zsh-autosuggestions
+    - [zsh-brew-local](https://github.com/ve2caz/dev-env-macos/.oh-my-zsh/custom/plugins/zsh-brew-local)
+    - brew
+    - asdf
+    - docker
+    - git
+    - golang
+    - gradle
+    - history
+    - iterm2
+    - kubectl
+    - kubectx
+    - macos
+    - node
+    - npm
+    - vscode
+
+## Roadmap
+
+- Install ITerm2 Fonts/Colors
