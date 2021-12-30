@@ -247,11 +247,20 @@ function installOhMyZshBrewLocalPlugin() {
     fi
 }
 
+function installOhMyZshBrewPlugin() {
+    blankLine
+    if isCurrentUserAdmin; then
+        message "skiping zsh-brew-local plugin"
+    else
+        installOhMyZshBrewLocalPlugin
+    fi
+}
+
 function deployOhMyZsh() {
     installOhMyZsh
     installOhMyZshCustomPlugin zsh-syntax-highlighting
     installOhMyZshCustomPlugin zsh-autosuggestions
-    installOhMyZshBrewLocalPlugin
+    installOhMyZshBrewPlugin
 }
 
 
@@ -260,13 +269,20 @@ function deployOhMyZsh() {
 ###############
 function setZshrcPreferences() {
     message "setting .zshrc preferences"
-    # sed \
-    #     -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/' \
-    sed \
+    blankLine
+    if isCurrentUserAdmin; then
+        sed \
+        -e 's/# HIST_STAMPS=/HIST_STAMPS=/' \
+        -e 's/HIST_STAMPS=\"mm\/dd\/yyyy\"/HIST_STAMPS=\"yyyy-mm-dd\"/' \
+        -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions brew asdf docker git golang gradle history iterm2 kubectl kubectx node npm vscode/' \
+        $ZSHRC_BACKUP > $ZSHRC
+    else
+        sed \
         -e 's/# HIST_STAMPS=/HIST_STAMPS=/' \
         -e 's/HIST_STAMPS=\"mm\/dd\/yyyy\"/HIST_STAMPS=\"yyyy-mm-dd\"/' \
         -e 's/\(git\)/zsh-syntax-highlighting zsh-autosuggestions zsh-brew-local brew asdf docker git golang gradle history iterm2 kubectl kubectx node npm vscode/' \
         $ZSHRC_BACKUP > $ZSHRC
+    fi
 }
 
 
