@@ -18,6 +18,7 @@
   - [Inkscape](https://inkscape.org)
   - [IntelliJ Community Edition](https://www.jetbrains.com/idea)
   - [iterm2](https://www.iterm2.com)
+  - [macSVG](https://macsvg.org)
   - [Visual Studio Code](https://code.visualstudio.com)
 - TBD: Install ITerm2 Fonts/Colors
 - Install [ASDF](https://github.com/asdf-vm/) to manage multiple runtime versions with a single CLI tool

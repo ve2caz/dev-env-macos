@@ -151,6 +151,7 @@ function installBrewCasks() {
     caskInstallIfNot inkscape # https://inkscape.org
     caskInstallIfNot intellij-idea-ce # https://www.jetbrains.com/idea
     caskInstallIfNot iterm2 # https://www.iterm2.com
+    caskInstallIfNot macsvg # https://macsvg.org
     caskInstallIfNot visual-studio-code # https://code.visualstudio.com
 }
 
