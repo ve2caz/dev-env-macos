@@ -212,6 +212,7 @@ function deployAsdf() {
     installAsdfPlugin java
     installAsdfPlugin jq
     installAsdfPlugin kotlin
+    installAsdfPlugin maven
     installAsdfPlugin nodejs
     installAsdfPlugin python
     installNodeJsAsdfPluginCerts

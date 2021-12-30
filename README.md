@@ -28,6 +28,7 @@
   - Java
   - JQ
   - Kotlin
+  - Maven
   - NodeJS
   - Python
 - Install [Oh-My-Zsh](https://ohmyz.sh)
