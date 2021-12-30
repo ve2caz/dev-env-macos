@@ -148,6 +148,7 @@ function installBrewCasks() {
     caskInstallIfNot drawio # https://www.diagrams.net
     caskInstallIfNot github # https://docs.github.com/en/desktop
     caskInstallIfNot graphql-playground # https://github.com/graphql/graphql-playground
+    caskInstallIfNot inkscape # https://inkscape.org
     caskInstallIfNot intellij-idea-ce # https://www.jetbrains.com/idea
     caskInstallIfNot iterm2 # https://www.iterm2.com
     caskInstallIfNot visual-studio-code # https://code.visualstudio.com

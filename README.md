@@ -15,6 +15,7 @@
   - [Draw.io](https://www.diagrams.net)
   - [GitHub Desktop](https://docs.github.com/en/desktop)
   - [GraphQL Playground](https://github.com/graphql/graphql-playground)
+  - [Inkscape](https://inkscape.org)
   - [IntelliJ Community Edition](https://www.jetbrains.com/idea)
   - [iterm2](https://www.iterm2.com)
   - [Visual Studio Code](https://code.visualstudio.com)
