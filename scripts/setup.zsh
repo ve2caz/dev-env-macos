@@ -252,6 +252,16 @@ function installOhMyZshBrewLocalPlugin() {
     fi
 }
 
+function installOhMyZshPowerLevel10KTheme() {
+    OHMYZSH_POWERLEVEL10K_CUSTOM_THEME=$OHMYZSH_CUSTOM_THEMES/powerlevel10k
+    if [ ! -d ${OHMYZSH_POWERLEVEL10K_CUSTOM_THEME} ];then
+        message "installing powerlevel10k theme"
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${OHMYZSH_POWERLEVEL10K_CUSTOM_THEME}
+    else
+        message "skiping powerlevel10k theme"
+    fi
+}
+
 function installOhMyZshBrewPlugin() {
     blankLine
     if isCurrentUserAdmin; then
@@ -266,6 +276,7 @@ function deployOhMyZsh() {
     installOhMyZshCustomPlugin zsh-syntax-highlighting
     installOhMyZshCustomPlugin zsh-autosuggestions
     installOhMyZshBrewPlugin
+    installOhMyZshPowerLevel10KTheme
 }
 
 
@@ -285,7 +296,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -390,10 +401,14 @@ EOF
 }
 
 
-########
-# MAIN #
-########
-deployBrew
-deployAsdf
-deployOhMyZsh
-setZshrcPreferences
+###########
+# INSTALL #
+###########
+function install() {
+    deployBrew
+    deployAsdf
+    deployOhMyZsh
+    setZshrcPreferences
+}
+
+install

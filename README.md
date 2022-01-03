@@ -117,7 +117,7 @@ Alternatively, manually download them from:
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - Set .zshrc preferences
-  - [ZSH_THEME](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)="robbyrussell"
+  - [ZSH_THEME](https://github.com/romkatv/powerlevel10k)="powerlevel10k/powerlevel10k"
   - [HIST_STAMPS](https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps)="yyyy-mm-dd"
   - [plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
     - zsh-syntax-highlighting
@@ -140,4 +140,6 @@ Alternatively, manually download them from:
 
 ## Roadmap
 
+- One script to both install/uninstall
+- Adopt full ZSH syntax without bash emulation
 - Install ITerm2 Fonts/Colors
