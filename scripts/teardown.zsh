@@ -111,10 +111,13 @@ function uninstallCask() {
     if isBrewCommandFound; then
         message "uninstalling homebrew casks"
         caskUninstallIfNot altair-graphql-client
+        caskUninstallIfNot drawio
         caskUninstallIfNot github
         caskUninstallIfNot graphql-playground
+        caskUninstallIfNot inkscape
         caskUninstallIfNot intellij-idea-ce
         caskUninstallIfNot iterm2
+        caskUninstallIfNot macsvg
         caskUninstallIfNot visual-studio-code
     fi
 }
@@ -134,6 +137,7 @@ rm -rf $ASDF_ROOT
 
 # Oh My Zsh
 rm -rf $ZSHRC $ZSHRC_BACKUP $OHMYZSH_ROOT
+rm -f ~/.p10k.zsh
 
 
 # Self
