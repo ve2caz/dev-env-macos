@@ -141,5 +141,4 @@ Alternatively, manually download them from:
 ## Roadmap
 
 - One script to both install/uninstall
-- Adopt full ZSH syntax without bash emulation
 - Install ITerm2 Fonts/Colors

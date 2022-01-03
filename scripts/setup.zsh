@@ -1,23 +1,20 @@
 #!/bin/zsh
 
-# Emulate BASH to make scripting easier
-emulate -LR bash
-
 ######################
 # GLOBAL DEFINITIONS #
 ######################
-ASDF_ROOT=~/.asdf
-HOMEBREW_INTEL_ROOT=/usr/local/Homebrew
-HOMEBREW_LOCAL_ROOT=~/homebrew
-OHMYZSH_ROOT=~/.oh-my-zsh
-OHMYZSH_CUSTOM_ROOT=$OHMYZSH_ROOT/custom
-OHMYZSH_CUSTOM_PLUGINS=$OHMYZSH_CUSTOM_ROOT/plugins
-OHMYZSH_CUSTOM_THEMES=$OHMYZSH_CUSTOM_ROOT/themes
-SCRIPT_PATH=${0:a:h}
-SCRIPT=${0:t}
-ZSH_USERS=https://github.com/zsh-users
-ZSHRC=~/.zshrc
-ZSHRC_BACKUP=~/.zshrc-dev-env-macos-backup
+export ASDF_ROOT=~/.asdf
+export HOMEBREW_INTEL_ROOT=/usr/local/Homebrew
+export HOMEBREW_LOCAL_ROOT=~/homebrew
+export OHMYZSH_ROOT=~/.oh-my-zsh
+export OHMYZSH_CUSTOM_ROOT=$OHMYZSH_ROOT/custom
+export OHMYZSH_CUSTOM_PLUGINS=$OHMYZSH_CUSTOM_ROOT/plugins
+export OHMYZSH_CUSTOM_THEMES=$OHMYZSH_CUSTOM_ROOT/themes
+export SCRIPT_PATH=${0:a:h}
+export SCRIPT=${0:t}
+export ZSH_USERS=https://github.com/zsh-users
+export ZSHRC=~/.zshrc
+export ZSHRC_BACKUP=~/.zshrc-dev-env-macos-backup
 
 
 ####################
@@ -34,17 +31,7 @@ function message() {
 }
 
 function isCurrentUserAdmin() {
-    if (( ! ${+IS_CURRENT_USER_ADMIN} )); then
-        WHOAMI=`whoami`
-        if groups $WHOAMI | grep -q -w admin; then
-            message "$WHOAMI is administrator"
-            IS_CURRENT_USER_ADMIN=true
-        else
-            message "$WHOAMI is not administrator"
-            IS_CURRENT_USER_ADMIN=false
-        fi
-    fi
-    return $IS_CURRENT_USER_ADMIN
+    groups `whoami` | grep -q -w admin
 }
 
 
@@ -52,45 +39,32 @@ function isCurrentUserAdmin() {
 # Homebrew Functions #
 ######################
 function isBrewCommandFound() {
-    if type brew &>/dev/null; then
-        message "brew command found"
-        return 0
-    fi
-    message "brew command not found"
-    return 1
+    command -v brew &> /dev/null
 }
 
 function isHomebrewInstalledNormally() {
-    if [ -d ${HOMEBREW_INTEL_ROOT} ]; then
-        message "homebrew is installed"
-        return 0
-    fi
-    message "homebrew is not installed"
-    return 1
+    [[ -d $HOMEBREW_INTEL_ROOT ]]
 }
 
 function installHomebrewNormally() {
     if ! isBrewCommandFound; then
+        message "brew command not found"
         if ! isHomebrewInstalledNormally; then
             message "installing homebrew"
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         else
-            message "skiping homebrew install"
+            message "homebrew found, skiping install"
         fi
     fi
 }
 
 function isHomebrewInstalledLocally() {
-    if [ -d ${HOMEBREW_LOCAL_ROOT} ]; then
-        message "homebrew is installed locally"
-        return 0
-    fi
-    message "homebrew is not installed locally"
-    return 1
+    [[ -d $HOMEBREW_LOCAL_ROOT ]]
 }
 
 function installHomebrewLocally() {
     if ! isBrewCommandFound; then
+        message "brew command not found"
         if ! isHomebrewInstalledLocally; then
             message "installing homebrew locally"
             # Extract Homebrew locally i.e. does not require an administrative account
@@ -109,7 +83,7 @@ function installHomebrewLocally() {
                 ${HOMEBREW_LOCAL_ROOT}/share \
                 ${HOMEBREW_LOCAL_ROOT}/var/homebrew/linked
         else
-            message "skiping homebrew install"
+            message "local homebrew found, skiping install"
         fi
         export PATH="${HOMEBREW_LOCAL_ROOT}/bin:${HOMEBREW_LOCAL_ROOT}/sbin:$PATH"
         message "prepending homebrew to path"
@@ -180,7 +154,7 @@ function deployBrew() {
 # ASDF - Manage multiple runtime versions with a single CLI tool #
 ##################################################################
 function installAsdf() {
-    if [ ! -d $ASDF_ROOT ]; then
+    if [[ ! -d $ASDF_ROOT ]]; then
         message "installing asdf"
         git clone https://github.com/asdf-vm/asdf.git $ASDF_ROOT
         pushd $ASDF_ROOT
@@ -195,7 +169,6 @@ function installAsdf() {
     asdf update
 }
 
-
 function installAsdfPlugin() {
     message "install $1 asdf plugin if not present"
     blankLine
@@ -207,7 +180,6 @@ function installNodeJsAsdfPluginCerts() {
     blankLine
     $HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
 }
-
 
 function deployAsdf() {
     installAsdf
@@ -227,7 +199,7 @@ function deployAsdf() {
 # oh-my-zsh Functions #
 #######################
 function installOhMyZsh() {
-    if [ ! -d $OHMYZSH_ROOT ]; then
+    if [[ ! -d $OHMYZSH_ROOT ]]; then
         message "installing oh-my-zsh"
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         mv -v $ZSHRC $ZSHRC_BACKUP
@@ -238,7 +210,7 @@ function installOhMyZsh() {
 
 function installOhMyZshCustomPlugin() {
     OHMYZSH_CUSTOM_PLUGIN=$OHMYZSH_CUSTOM_PLUGINS/$1
-    if [ ! -d ${OHMYZSH_CUSTOM_PLUGIN} ];then
+    if [[ ! -d ${OHMYZSH_CUSTOM_PLUGIN} ]];then
         message "installing $1"
         git clone $ZSH_USERS/$1 $OHMYZSH_CUSTOM_PLUGIN
     else
@@ -248,7 +220,7 @@ function installOhMyZshCustomPlugin() {
 
 function installOhMyZshBrewLocalPlugin() {
     OHMYZSH_BREW_LOCAL=$OHMYZSH_CUSTOM_PLUGINS/zsh-brew-local
-    if [ ! -d ${OHMYZSH_BREW_LOCAL} ];then
+    if [[ ! -d ${OHMYZSH_BREW_LOCAL} ]];then
         message "installing zsh-brew-local"
         cp -fpR $SCRIPT_PATH/../.oh-my-zsh/custom/plugins/zsh-brew-local $OHMYZSH_BREW_LOCAL
     else
@@ -258,7 +230,7 @@ function installOhMyZshBrewLocalPlugin() {
 
 function installOhMyZshPowerLevel10KTheme() {
     OHMYZSH_POWERLEVEL10K_CUSTOM_THEME=$OHMYZSH_CUSTOM_THEMES/powerlevel10k
-    if [ ! -d ${OHMYZSH_POWERLEVEL10K_CUSTOM_THEME} ];then
+    if [[ ! -d ${OHMYZSH_POWERLEVEL10K_CUSTOM_THEME} ]];then
         message "installing powerlevel10k theme"
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${OHMYZSH_POWERLEVEL10K_CUSTOM_THEME}
     else
@@ -288,7 +260,6 @@ function deployOhMyZsh() {
 # Preferences #
 ###############
 function setZshrcPreferences() {
-    emulate zsh
     local ZSHRC_PREFERENCES=$(<<- "EOF"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -394,7 +365,6 @@ source $ZSH/oh-my-zsh.sh
 alias cls="clear"
 EOF
 )
-    emulate -LR bash
     message "setting .zshrc preferences"
     blankLine
     if isCurrentUserAdmin; then
