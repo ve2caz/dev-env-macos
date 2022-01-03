@@ -34,13 +34,17 @@ function message() {
 }
 
 function isCurrentUserAdmin() {
-    WHOAMI=`whoami`
-    if groups $WHOAMI | grep -q -w admin; then
-        message "$WHOAMI is administrator"
-        return 0
+    if (( ! ${+IS_CURRENT_USER_ADMIN} )); then
+        WHOAMI=`whoami`
+        if groups $WHOAMI | grep -q -w admin; then
+            message "$WHOAMI is administrator"
+            IS_CURRENT_USER_ADMIN=true
+        else
+            message "$WHOAMI is not administrator"
+            IS_CURRENT_USER_ADMIN=false
+        fi
     fi
-    message "$WHOAMI is not administrator"
-    return 1
+    return $IS_CURRENT_USER_ADMIN
 }
 
 
