@@ -111,6 +111,7 @@ function uninstallCask() {
     if isBrewCommandFound; then
         message "uninstalling homebrew casks"
         caskUninstallIfNot altair-graphql-client
+        caskUninstallIfNot dbeaver-community
         caskUninstallIfNot drawio
         caskUninstallIfNot github
         caskUninstallIfNot graphql-playground

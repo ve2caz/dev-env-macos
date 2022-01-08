@@ -94,6 +94,7 @@ Alternatively, manually download them from:
   - [gnupg](https://gnupg.org)
 - Install brew casks
   - [Altair GraphQL Client](https://altair.sirmuel.design)
+  - [DBeaver](https://github.com/dbeaver/dbeaver)
   - [Draw.io](https://www.diagrams.net)
   - [GitHub Desktop](https://docs.github.com/en/desktop)
   - [GraphQL Playground](https://github.com/graphql/graphql-playground)
