@@ -201,6 +201,7 @@ function deployAsdf() {
     installNodeJsAsdfPluginCerts
 }
 
+
 #######################
 # oh-my-zsh Functions #
 #######################

@@ -7,7 +7,7 @@
 - Installing, updating or removing software is an administrative task and as such should be performed using an account with elevated privileges i.e. a member of the admin group
 - Development is NOT an administrative task and as such should be performed using and account with lowered privileges i.e. a member of the staff group
 - Unless otherwise specified all terminal commands are based on the new default zsh shell.
-- Apple macOS Big Sur 11.16.1
+- Apple macOS Ventura 13.6.1
 
 ## Install XCode
 
@@ -77,6 +77,10 @@ Alternatively, manually download them from:
 ```zsh
 % ./scripts/setup.zsh
 ```
+
+## Install fonts manually
+
+Follow instructions for [manual-font-installation](https://github.com/romkatv/powerlevel10k/blob/master/font.md#manual-font-installation) which will allow VSCode to render the various theme icons.
 
 ## Teardown the development environment
 
