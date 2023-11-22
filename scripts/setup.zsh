@@ -179,7 +179,13 @@ function installAsdfPlugin() {
 function installNodeJsAsdfPluginCerts() {
     message "installing asdf nodejs plugin GPG certs"
     blankLine
-    $HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
+    # Work around keyring script missing
+    export IMPORT_RELEASE_TEAM_KEYRING=$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
+    if [[ -f "$IMPORT_RELEASE_TEAM_KEYRING" ]]; then
+        message "source nodejs release team keyring"
+        . $IMPORT_RELEASE_TEAM_KEYRING
+        blankLine
+    fi
 }
 
 function deployAsdf() {
@@ -194,7 +200,6 @@ function deployAsdf() {
     installAsdfPlugin python
     installNodeJsAsdfPluginCerts
 }
-
 
 #######################
 # oh-my-zsh Functions #
