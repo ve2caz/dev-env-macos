@@ -95,7 +95,12 @@ Follow instructions for [manual-font-installation](https://github.com/romkatv/po
   - Otherwise install locally to remove the need for sudo use
 - Install brew formulas
   - [coreutils](https://formulae.brew.sh/formula/coreutils)
+  - [git](https://git-scm.com/download/mac)
+  - [gh](https://cli.github.com)
   - [gnupg](https://gnupg.org)
+  - [k9s](https://k9scli.io)
+  - [kubectx](https://github.com/ahmetb/kubectx)
+  - [kubernetes-cli](https://kubernetes.io/docs/tasks/tools/)
 - Install brew casks
   - [Altair GraphQL Client](https://altair.sirmuel.design)
   - [DBeaver](https://github.com/dbeaver/dbeaver)

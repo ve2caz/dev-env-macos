@@ -117,7 +117,12 @@ function caskInstallIfNot() {
 function installBrewFormulas() {
     message "installing brew formulas..."
     brewInstallIfNot coreutils # https://formulae.brew.sh/formula/coreutils
+    brewInstallIfNot git # https://git-scm.com/download/mac
+    brewInstallIfNot gh # https://cli.github.com
     brewInstallIfNot gnupg # https://gnupg.org
+    brewInstallIfNot k9s # https://k9scli.io
+    brewInstallIfNot kubectx # https://github.com/ahmetb/kubectx
+    brewInstallIfNot kubernetes-cli # https://kubernetes.io/docs/tasks/tools/
 }
 
 function installBrewCasks() {
