@@ -116,13 +116,22 @@ function caskInstallIfNot() {
 
 function installBrewFormulas() {
     message "installing brew formulas..."
-    brewInstallIfNot coreutils # https://formulae.brew.sh/formula/coreutils
-    brewInstallIfNot git # https://git-scm.com/download/mac
-    brewInstallIfNot gh # https://cli.github.com
-    brewInstallIfNot gnupg # https://gnupg.org
-    brewInstallIfNot k9s # https://k9scli.io
-    brewInstallIfNot kubectx # https://github.com/ahmetb/kubectx
+    brewInstallIfNot btop           # https://github.com/aristocratos/btop
+    brewInstallIfNot coreutils      # https://www.gnu.org/software/coreutils
+    brewInstallIfNot fzf            # https://github.com/junegunn/fzf
+    brewInstallIfNot git            # https://git-scm.com/download/mac
+    brewInstallIfNot gh             # https://cli.github.com
+    brewInstallIfNot gnupg          # https://gnupg.org
+    brewInstallIfNot htop           # https://htop.dev
+    brewInstallIfNot ipcalc         # https://jodies.de/ipcalc
+    brewInstallIfNot jq             # https://jqlang.github.io/jq/
+    brewInstallIfNot k9s            # https://k9scli.io
+    brewInstallIfNot kubectx        # https://github.com/ahmetb/kubectx
     brewInstallIfNot kubernetes-cli # https://kubernetes.io/docs/tasks/tools/
+    brewInstallIfNot kubie          # https://github.com/sbstp/kubie
+    brewInstallIfNot lazydocker     # https://github.com/jesseduffield/lazydocker
+    brewInstallIfNot openssl        # https://www.openssl.org/
+    brewInstallIfNot tldr           # https://tldr.sh
 }
 
 function installBrewCasks() {

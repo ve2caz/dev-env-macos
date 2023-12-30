@@ -94,13 +94,22 @@ Follow instructions for [manual-font-installation](https://github.com/romkatv/po
   - If the user has administration capabilities install to the expected location
   - Otherwise install locally to remove the need for sudo use
 - Install brew formulas
-  - [coreutils](https://formulae.brew.sh/formula/coreutils)
+  - [btop](https://github.com/aristocratos/btop)
+  - [coreutils](https://www.gnu.org/software/coreutils)
+  - [fzf](https://github.com/junegunn/fzf)
   - [git](https://git-scm.com/download/mac)
   - [gh](https://cli.github.com)
   - [gnupg](https://gnupg.org)
+  - [htop](https://htop.dev)
+  - [ipcalc](https://jodies.de/ipcalc)
+  - [jq](https://jqlang.github.io/jq/)
   - [k9s](https://k9scli.io)
   - [kubectx](https://github.com/ahmetb/kubectx)
   - [kubernetes-cli](https://kubernetes.io/docs/tasks/tools/)
+  - [kubie](https://github.com/sbstp/kubie)
+  - [lazydocker](https://github.com/jesseduffield/lazydocker)
+  - [openssl](https://www.openssl.org/)
+  - [tldr](https://tldr.sh)
 - Install brew casks
   - [Altair GraphQL Client](https://altair.sirmuel.design)
   - [DBeaver](https://github.com/dbeaver/dbeaver)
@@ -117,7 +126,6 @@ Follow instructions for [manual-font-installation](https://github.com/romkatv/po
   - Gradle
   - GoLang
   - Java
-  - JQ
   - Kotlin
   - Maven
   - NodeJS
