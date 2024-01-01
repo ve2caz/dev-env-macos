@@ -130,6 +130,7 @@ function installBrewFormulas() {
     brewInstallIfNot kubernetes-cli # https://kubernetes.io/docs/tasks/tools/
     brewInstallIfNot kubie          # https://github.com/sbstp/kubie
     brewInstallIfNot lazydocker     # https://github.com/jesseduffield/lazydocker
+    brewInstallIfNot nmap           # https://nmap.org/
     brewInstallIfNot openssl        # https://www.openssl.org/
     brewInstallIfNot tldr           # https://tldr.sh
 }

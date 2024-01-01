@@ -108,6 +108,7 @@ Follow instructions for [manual-font-installation](https://github.com/romkatv/po
   - [kubernetes-cli](https://kubernetes.io/docs/tasks/tools/)
   - [kubie](https://github.com/sbstp/kubie)
   - [lazydocker](https://github.com/jesseduffield/lazydocker)
+  - [nmap](https://nmap.org/)
   - [openssl](https://www.openssl.org/)
   - [tldr](https://tldr.sh)
 - Install brew casks
